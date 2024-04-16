@@ -11,8 +11,8 @@ import sys
 def get_todo_data(emp_ID):
     """ Gets data from url and makes that data into JSON. """
     url = "https://jsonplaceholder.typicode.com"
-    user_url = url + f"/users/{emp_ID}"
-    todo_url = url + f"/users/{emp_ID}/todos"
+    user_url = url + "/users/" + emp_ID
+    todo_url = url + "/users/" + emp_ID + "/todos"
     response1 = requests.get(user_url)
     user = json.loads(response1.text)
     response2 = requests.get(todo_url)
@@ -28,9 +28,13 @@ def get_todo_data(emp_ID):
             completed_titles.append(todo["title"])
 
     """ Prints data. """
-    print(f"Employee {user["name"]} is done with tasks({comp}/{totalTodos}):")
+    print("Employee {} is done with tasks({}/{}):".format(
+        user["name"],
+        comp,
+        totalTodos
+    ))
     for titles in completed_titles:
-        print(f"\t {titles}")
+        print("\t " + titles)
 
 
 if __name__ == "__main__":
