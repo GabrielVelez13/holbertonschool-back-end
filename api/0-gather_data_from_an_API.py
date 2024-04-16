@@ -3,6 +3,7 @@
 This script gets data from a todo list through
 a REST API protocol and presents useful info.  
 """
+import json
 import requests
 import sys
 
@@ -12,9 +13,9 @@ def get_todo_data(emp_ID):
     user_url = url + f"/users/{emp_ID}"
     todo_url = url + f"/users/{emp_ID}/todos"
     response1 = requests.get(user_url)
-    user = response1.json()
+    user = json.loads(response1.text)
     response2 = requests.get(todo_url)
-    todos = response2.json()
+    todos = json.loads(response2.text)
 
     """ Parses data. """
     complete = 0
