@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-""" 
+"""
 This script gets data from a todo list through
-a REST API protocol and presents useful info.  
+a REST API protocol and presents useful info.
 """
 import json
 import requests
 import sys
+
+""" testing """
+
 
 def get_todo_data(emp_ID):
     """ Gets data from url and makes that data into JSON. """
@@ -18,18 +21,19 @@ def get_todo_data(emp_ID):
     todos = json.loads(response2.text)
 
     """ Parses data. """
-    complete = 0
-    total_todos = len(todos)
+    comp = 0
+    totalTodos = len(todos)
     completed_titles = []
     for todo in todos:
         if todo['completed']:
-            complete += 1
+            comp += 1
             completed_titles.append(todo["title"])
 
     """ Prints data. """
-    print(f"Employee {user["name"]} is done with tasks({complete}/{total_todos}):")
+    print(f"Employee {user["name"]} is done with tasks({comp}/{totalTodos}):")
     for titles in completed_titles:
         print(f"\t {titles}")
+
 
 if __name__ == "__main__":
     get_todo_data(sys.argv[1])
