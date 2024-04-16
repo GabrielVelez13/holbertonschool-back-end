@@ -7,8 +7,6 @@ import json
 import requests
 import sys
 
-""" testing """
-
 
 def get_todo_data(emp_ID):
     """ Gets data from url and makes that data into JSON. """
