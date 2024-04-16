@@ -26,7 +26,7 @@ def get_todo_data(emp_ID):
         rows.append(row)
 
     """ Puts data into a CSV file. """
-    with open('USER_ID.csv', 'w') as csvfile:
+    with open('{}.csv'.format(emp_ID), 'w') as csvfile:
         csvwriter = csv.writer(csvfile, quotechar='"', quoting=csv.QUOTE_ALL)
         csvwriter.writerows(rows)
 
