@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This script gets data from a todo list through
-a REST API protocol and presents useful info.
+a REST API protocol and presents useful info,
+and puts it into a JSON file.
 """
 import json
 import requests

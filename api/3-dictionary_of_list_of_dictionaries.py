@@ -12,7 +12,6 @@ def get_todo_data():
     """ Gets data from url and makes that data into JSON. """
     url = "https://jsonplaceholder.typicode.com"
     user_url = f"/users/"
-    todo_url = url + f"/users/todos"
 
     response1 = requests.get(url + user_url)
     users = response1.json()
