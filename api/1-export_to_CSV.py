@@ -1,4 +1,4 @@
-#!/usr/bin./python3
+#!/usr/bin/python3
 """
 This script gets data from a todo list through
 a REST API protocol and presents useful info.
