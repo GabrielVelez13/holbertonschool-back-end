@@ -22,7 +22,7 @@ def get_todo_data(emp_ID):
     """ Parses data. """
     rows = []
     for todo in todos:
-        row = [emp_ID, user["name"], todo["completed"], todo['title']]
+        row = [emp_ID, user["username"], todo["completed"], todo['title']]
         rows.append(row)
 
     """ Puts data into a CSV file. """
